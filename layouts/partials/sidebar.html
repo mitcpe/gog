@@ -1,0 +1,19 @@
+<div class="card mx-3 my-5 p-3">
+  {{ $recent := .Site.Params.sidebar.recent }}
+  {{- if $recent -}}
+    {{ partial "widgets/recent.html" . }}
+  {{- end -}}  
+  {{ $categories := .Site.Params.sidebar.categories }}
+  {{- if $categories -}}  
+    {{ partial "widgets/categories.html" . }}
+  {{- end -}}
+  {{ $tags := .Site.Params.sidebar.tags }}
+  {{- if $tags -}}
+    {{ partial "widgets/tags.html" . }}
+  {{- end -}}
+  {{ $goodreads := .Site.Params.sidebar.goodreads }}
+  {{- if $goodreads -}}
+    <br />
+    {{ partial "widgets/goodreads.html" . }}
+  {{- end -}}
+</div>
