@@ -1,5 +1,5 @@
 ---
-title: "Thank You
+title: "Thank You"
 date: 2025-02-19T12:25:02Z
 draft: false
 ---
