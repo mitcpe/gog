@@ -1,18 +1,18 @@
 {
-  "name": "hugo-comments",
+  "name": "g-o-g",
   "version": "1.0.0",
   "private": true,
-  "description": "comment test site",
+  "description": "Growing Old Gracefully",
   "scripts": {
     "start": "gulp dev && hugo server",
     "deploy": "gulp build && hugo --minify"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ttntm/hugo-comments.git"
+    "url": "git+https://github.com/mitcpe/gog.git"
   },
   "author": "ttntm",
-  "homepage": "https://hugo-comments.netlify.com",
+  "homepage": "https://beautiful-quokka-79b409.netlify.app",
   "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^9.1.5",
