@@ -4,7 +4,7 @@
 
 [build.environment]
   HUGO_VERSION = "0.121.0"
-  HUGO_BASEURL = "https://beautiful-quokka-79b409/"
+  HUGO_BASEURL = "https://beautiful-quokka-79b409.netlify.app/"
 
 [[headers]]
   for = "/*.css"
