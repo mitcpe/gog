@@ -1,10 +1,15 @@
 [build]
-  publish = "public"
-  command = "hugo --gc --minify"
+publish = "public"
+command = "npm run deploy"
 
-[build.environment]
-  HUGO_VERSION = "0.121.0"
-  HUGO_BASEURL = "https://beautiful-quokka-79b409.netlify.app/"
+[context.production.environment]
+HUGO_VERSION = "0.124.0"
+HUGO_ENV = "production"
+HUGO_ENABLEGITINFO = "false"
+command = "npm run deploy"
+
+[Settings]
+ID = "hugo-comments"
 
 [[headers]]
   for = "/*.css"
