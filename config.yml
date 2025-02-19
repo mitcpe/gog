@@ -6,7 +6,7 @@ lang: en-GB
 copyright: "G.O.G"
 enableRobotsTXT: true
 enableEmoji: true
-canonifyURLs: true
+canonifyURLs: false
 
 #author:
 #  name: Paul Mitchell
