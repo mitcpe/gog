@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/mitcpe/gog.git"
   },
-  "author": "ttntm",
+  "author": "mitcpe",
   "homepage": "https://beautiful-quokka-79b409.netlify.app",
   "dependencies": {},
   "devDependencies": {
