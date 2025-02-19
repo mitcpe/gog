@@ -1,12 +1,3 @@
 [build]
 publish = "public"
 command = "npm run deploy"
-
-[context.production.environment]
-HUGO_VERSION = "0.121.0"
-HUGO_ENV = "production"
-HUGO_ENABLEGITINFO = "false"
-command = "npm run deploy"
-
-[Settings]
-ID = "g-o-g"
