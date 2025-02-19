@@ -9,19 +9,4 @@ HUGO_ENABLEGITINFO = "false"
 command = "npm run deploy"
 
 [Settings]
-ID = "hugo-comments"
-
-[[headers]]
-  for = "/*.css"
-  [headers.values]
-    Cache-Control = "public, max-age=3153600"
-
-[[headers]]
-  for = "/*.js"
-  [headers.values]
-    Cache-Control = "public, max-age=3153600"
-
-[[headers]]
-  for = "/img/*"
-  [headers.values]
-    Cache-Control = "public, max-age=3153600"
+ID = "g-o-g"
