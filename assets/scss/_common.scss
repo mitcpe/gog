@@ -1,0 +1,601 @@
+$radius: 8px;
+
+body {
+  color: $gray;
+  background-color: $white;
+  font-family: $font-primary;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.65;
+
+  a:hover {
+    color: $color-primary;
+  }
+
+  blockquote {
+    padding: 20px 30px;
+    border-left: 6px solid $color-primary;
+    font-size: 16px;
+    margin: 30px 50px 30px 20px;
+    background-color: $light;
+    border-radius: 5px;
+
+    p {
+      margin-bottom: 0;
+    }    
+  }
+ 
+  figcaption {
+    font-size: 14px;
+    font-style: italic;
+  }
+
+}
+
+::selection {
+  color: $white;
+  background-color: darken($color-primary, 5);
+  text-shadow: none;
+}
+
+:focus {
+  outline: 0;
+}
+
+.panel-head {
+  display: inline-block;
+  border-bottom: solid 5px $color-primary;
+
+}
+
+/*------------------------------------------------------------------
+ # default styles
+-------------------------------------------------------------------*/
+.section {
+  padding: 120px 0;
+
+  &-sm {
+    padding: 90px 0;
+  }
+}
+
+// social-links
+.social-links {
+  a {
+    font-size: 18px;
+    padding: 7px;
+    color: rgba($black, .8);
+    display: inline-block;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+  &.icon-box li a {
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    border: 1px solid #ddd;
+    padding: 0;
+    @extend .rounded;
+  }
+}
+
+.post-title {
+  font-weight: 800;
+  color: $dark;
+  display: inline-block;
+}
+
+a.post-title:hover,
+.post-title:hover a {
+  color: $color-primary;
+}
+
+
+// taxonomies-list
+.taxonomies-list {
+  li a:hover {
+    background-color: $color-primary !important;
+    color: $white;
+  }
+}
+
+
+// content
+.content {
+  font-size: 17px;
+
+  p {
+    margin-bottom: 16px;
+  }
+
+  img {
+    margin-bottom: 30px;
+    @extend .rounded;
+  }
+
+  h2,
+  h3,
+  h4 {
+    color: $dark;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+
+  h3 {
+    margin-top: 40px;
+  }
+
+  ol,
+  ul {
+    margin-bottom: 25px;
+    padding-left: 0;
+
+    li {
+      margin-bottom: 10px;
+    }
+  }
+
+  img {
+    margin-top: 10px;
+    margin-bottom: 35px;
+  }
+
+  blockquote {
+    padding: 20px 30px;
+    border-left: 6px solid $color-primary;
+    color: $dark;
+    font-weight: 700;
+    font-size: 22px;
+    margin: 30px 0;
+    border-radius: 5px;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// content style
+.content {
+  * {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+    color: $dark;
+  }
+
+  strong {
+    font-weight: 800;
+  }
+
+  a {
+    color: $gray;
+    border-bottom: 1px dotted $color-primary;
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    h2 {
+      color: $dark;
+    }
+  }
+
+  a.collapse-head {
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  a.next {
+    color: $gray;
+    border-bottom: 1px dotted $color-primary;
+    text-align: right;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  ol,
+  ul {
+    li {
+      margin-bottom: 10px;
+    }
+  }
+
+  ul {
+    margin-bottom: 20px;
+    list-style-type: none;
+
+    li {
+      padding-left: 20px;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: '';
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
+        background: $color-primary;
+        left: 3px;
+        top: 8px;
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    border: 1px solid #e0e0e0;
+  }
+
+  table td,
+  table th {
+    padding: .75rem;
+    vertical-align: top;
+    margin-bottom: 0;
+    border: 1px solid #e0e0e0;
+  }
+
+  tr:not(:last-child) {
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  th {
+    font-weight: 500;
+  }
+
+  thead {
+    background: #efefef;
+    margin-bottom: 0;
+
+    tr {
+      border-bottom: 1px solid #e0e0e0;
+    }
+  }
+
+  tbody {
+    background: lighten($color: #efefef, $amount: 5);
+    margin-bottom: 0;
+  }
+
+  pre {
+    display: block;
+    padding: 9.5px;
+    margin: 10px 0px 10px;
+    white-space: pre-wrap;
+  }
+
+  code {
+    margin-bottom: 0 !important;
+    font-size: 100%;
+  }
+}
+
+// breadcrumb
+.breadcrumb-menu {
+  display: inline-block;
+  padding-top: 18px;
+  border-top: 1px solid $color-primary;
+}
+
+
+// form-control
+.form-control {
+  padding: 0;
+  border: 0;
+  border: 1px solid #e6e6e6;
+  border-radius: 0 !important;
+  height: 50px;
+  padding: 12px 16px;
+  font-size: 17px;
+  font-weight: 500;
+  transition: .3s ease;
+
+  &:focus {
+    box-shadow: none;
+    color: $dark;
+    border-color: $color-primary;
+
+    ~.input-group-append {
+      .input-group-text {
+        border-color: $color-primary;
+      }
+    }
+  }
+}
+
+textarea {
+  resize: none;
+}
+
+.input-group-text {
+  background-color: transparent;
+  border-bottom: 1px solid #999;
+  border-radius: 0 !important;
+  transition: .3s ease;
+
+  .icon {
+    font-size: 22px;
+  }
+}
+
+button.input-group-text {
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+
+/*------------------------------------------------------------------
+ # helper classes
+-------------------------------------------------------------------*/
+.font-primary {
+  font-family: $font-primary
+}
+
+.rounded {
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+
+.font-weight-500 {
+  font-weight: 500
+}
+
+.font-weight-700 {
+  font-weight: 700
+}
+
+.font-weight-800 {
+  font-weight: 800
+}
+
+.font-weight-900 {
+  font-weight: 900
+}
+
+.text-primary {
+  color: $color-primary !important
+}
+
+a.text-primary:hover {
+  color: darken($color-primary, 10) !important
+}
+
+.bg-primary {
+  background-color: $color-primary !important
+}
+
+.text-dark {
+  color: $dark
+}
+
+a.text-dark:hover {
+  color: $color-primary !important
+}
+
+.bg-light {
+  background-color: $light !important
+}
+
+.bg-dark {
+  background-color: $dark !important
+}
+
+.text-gray:hover {
+  color: $color-primary;
+}
+
+// footer
+footer {
+  background-color: $dark;
+  color: rgba($white, .7);
+
+  .icon-box a {
+    color: rgba($white, .7);
+    &:hover {
+      color: $white;
+      background-color: $color-primary;
+      border-color: $color-primary;
+    }
+  }
+}
+.footer-menu {
+  li a {
+    color: rgba($white, .7);
+    &:hover {
+      color: $color-primary;
+      text-decoration: underline;
+    }
+  }
+}
+
+#cookie-notice {
+  font-size: medium; 
+  padding: 0.5rem 1rem; 
+  display: none;
+  text-align: center; 
+  position: fixed; 
+  bottom: 0; 
+  left: 20px; 
+  padding-top: 40px;
+  padding-bottom: 40px; 
+  width: 100%; 
+  background: rgb(70, 70, 70);
+  color: rgba(255,255,255,0.8);
+
+  a {
+    font-weight: 500; 
+    display: inline-flex; 
+    cursor: pointer; 
+    margin-left: 0.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  #cookie-notice span {
+    display: block; 
+    padding-top: 3px; 
+    margin-bottom: 1rem;
+  }
+  #cookie-notice a {
+    position: relative; 
+    bottom: 4px;
+  }
+  
+  #cookie-notice {
+    left: 0px;}
+}
+
+.social-share {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  &.icon-box a {
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    border: 1px solid transparent;
+    @extend .rounded;
+  }
+
+  .facebook {
+    border-color: #4267B2;
+    color: #4267B2;
+
+    &:hover {
+      background: #4267B2;
+      color: $white;
+    }
+  }
+
+  .twitter {
+    border-color: #1DA1F2;
+    color: #1DA1F2;
+
+    &:hover {
+      background: #1DA1F2;
+      color: $white;
+    }
+  }
+
+  .reddit {
+    border-color: #FF4500;
+    color: #FF4500;
+
+    &:hover {
+      background: #FF4500;
+      color: $white;
+    }
+  }
+
+  .tumblr {
+    border-color: #35465C;
+    color: #35465C;
+
+    &:hover {
+      background: #35465C;
+      color: $white;
+    }
+  }
+
+  .linkedin {
+    border-color: #2867B2;
+    color: #2867B2;
+
+    &:hover {
+      background: #2867B2;
+      color: $white;
+    }
+  }
+
+  .pinterest {
+    border-color: #ff0000;
+    color: #ff0000;
+
+    &:hover {
+      background: #ff0000;
+      color: $white;
+    }
+  }
+
+
+  .email {
+    border-color: #00A4EF;
+    color: #00A4EF;
+
+    &:hover {
+      background: #00A4EF;
+      color: $white;
+    }
+  }
+}
+
+// Goodreads Styling
+.gr_custom_container_1657052711 {
+  /* customize your Goodreads widget container here*/
+  margin: auto;
+  border: 1px solid gray;
+  border-radius:10px;
+  padding: 10px 5px 10px 5px;
+  background-color: #FFFFFF;
+  color: #000000;
+  width: 300px
+}
+.gr_custom_header_1657052711 {
+  /* customize your Goodreads header here*/
+  border-bottom: 1px solid gray;
+  width: 100%;
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 120%
+}
+.gr_custom_each_container_1657052711 {
+  /* customize each individual book container here */
+  width: 100%;
+  clear: both;
+  margin-bottom: 10px;
+  overflow: auto;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #aaa;
+}
+.gr_custom_book_container_1657052711 {
+  /* customize your book covers here */
+  align-self: center;
+  overflow: hidden;
+  height: 60px;
+  float: left;
+  margin-right: 4px;
+  width: 39px;
+}
+.gr_custom_author_1657052711 {
+  /* customize your author names here */
+  font-size: 10px;
+}
+.gr_custom_tags_1657052711 {
+  /* customize your tags here */
+  font-size: 10px;
+  color: gray;
+}
+.gr_custom_rating_1657052711 {
+  /* customize your rating stars here */
+  float: right;
+}
