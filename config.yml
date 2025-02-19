@@ -52,6 +52,8 @@ params:
 
   i18n: true
 
+  comments: true
+
   # Index Page Attributes
   carousel: false
   subheading: true
