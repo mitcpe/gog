@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{- partial "head.html" . -}}
+    <body>
+        {{- partial "header.html" . -}}
+        <div class="container-fluid p-3">
+          <div class="row">
+            {{ if .Site.Params.sidebarEnable }}
+              {{ if eq .Site.Params.sidebarLR "right" }}
+                <div class="col-sm-8">{{- block "main" . }}{{- end }}</div>
+                <div class="col-sm-4">{{- partial "sidebar.html" . -}}</div>
+              {{ else }}
+                <div class="col-sm-4">{{- partial "sidebar.html" . -}}</div>
+                <div class="col-sm-8">{{- block "main" . }}{{- end }}</div>
+              {{ end }}
+            {{ else }}
+              <div class="col-sm-12">{{- block "main" . }}{{- end }}</div>
+            {{ end }}
+          </div>
+        </div>
+        
+        {{- partial "footer.html" . -}} 
+        {{- partial "scripts.html" . -}} 
+        
+        <script>
+            if (window.netlifyIdentity) {
+              window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                  window.netlifyIdentity.on("login", () => {
+                    document.location.href = "/admin/";
+                  });
+                }
+              });
+            }
+        </script>
+                
+    </body>
+</html>

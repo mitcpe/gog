@@ -1,0 +1,56 @@
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {{- if hugo.IsProduction | or (eq site.Params.env "production") | and (ne .Params.robotsNoIndex true) }}
+        <meta name="robots" content="index, follow">
+    {{- else }}
+        <meta name="robots" content="noindex, nofollow">
+    {{- end }}
+    
+    <!-- Generator -->
+    {{- hugo.Generator -}}
+
+    <!-- Bootstrap CSS -->
+    {{ $bootstrap := resources.Get "/css/bootstrap.min.css" }}
+    <link rel="stylesheet" href="{{ $bootstrap.Permalink }}" as="style" />
+
+    <!-- Fontawsome icons have been replaced by SVG's -->
+    
+    <!-- Customer CSS --> 
+    {{/*  {{ $style := resources.Get "/css/style.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" as="style" />  */}}
+
+    <!-- Testing scss -->
+    {{ $main_options := (dict "targetPath" "css/site.css" "outputStyle" "compressed") }}
+    {{ $main_template := resources.Get "scss/main.scss" }}
+    {{ $main_style := $main_template | resources.ExecuteAsTemplate "main_parsed.scss" . | toCSS $main_options | resources.Minify | resources.Fingerprint }}    
+    <link rel="stylesheet" href="{{ $main_style.RelPermalink }}">
+
+    <!-- Title -->
+    <title>{{ if .IsHome }}{{ else }}{{ if .Title }}{{ .Title }} | {{ end }}{{ end }}{{ site.Title }}</title>
+
+    {{- /* Meta */}}
+    {{- if .IsHome }}
+        {{ with site.Params.keywords -}}<meta name="keywords" content="{{- range $i, $e := . }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}">{{ end }}
+    {{- else }}
+        <meta name="keywords" content="{{ if .Params.keywords -}}
+            {{- range $i, $e := .Params.keywords }}{{ if $i }}, {{ end }}{{ $e }}{{ end }} {{- else }}
+            {{- range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }} {{- end -}}">
+    {{- end }}
+    <meta name="description" content="{{- with .Description }}{{ . }}{{- else }}{{- if or .IsPage .IsSection}}
+        {{- .Summary | default (printf "%s - %s" .Title  site.Title) }}{{- else }}
+        {{- with site.Params.description }}{{ . }}{{- end }}{{- end }}{{- end -}}">
+    
+    <!-- Google Snippet (Review) -->
+
+    <link rel="canonical" href="{{ .Permalink }}" />
+
+    <!-- CMS Admin -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{- .Site.Params.favicon | default "favicon.ico" |
+  absURL -}}" sizes="256x256"> 
+    
+  {{- partial "seo.html" . -}}
+</head>
